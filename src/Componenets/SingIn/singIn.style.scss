@@ -1,3 +1,8 @@
 .singin{
     width: 30vw;
+    display: flex;
+    flex-direction:column;
+    &.title{
+        margin: 15px 0px;
+    }
 }

@@ -1,6 +1,7 @@
 import React,{Component} from 'react';
 import './singIn.style.scss';
 import FormInput from '../formInput/FormInput';
+import Button from '../Button/Button';
 class Singin extends Component{
     constructor(){
         super();
@@ -29,7 +30,7 @@ class Singin extends Component{
    
                     <FormInput type="password" name='password' handelChange={this.onchange}  value={this.state.password} label='Password' required/>
     
-                    <input type="submit" value='submitButton'/>
+                    <Button type="submit"> SIGNIN</Button>
                 </form>
             </div>
 
