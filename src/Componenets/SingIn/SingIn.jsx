@@ -30,10 +30,10 @@ class Singin extends Component{
                     <FormInput type="email" name='email'  handelChange={this.onchange} value={this.state.email} label='Email' required/>
    
                     <FormInput type="password" name='password' handelChange={this.onchange}  value={this.state.password} label='Password' required/>
-    
+                    <div className="buttonContainer">
                     <Buttons type="submit"> SIGN IN</Buttons>
-                    <Buttons onClick={signInWithGoogle}> SIGN IN WITH GOOGLE</Buttons>
-
+                    <Buttons onClick={signInWithGoogle} IsGoogleSignIn> SIGN IN WITH GOOGLE</Buttons>
+                    </div>
                 </form>
                 
             </div>

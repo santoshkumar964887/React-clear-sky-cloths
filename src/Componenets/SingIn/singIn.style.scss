@@ -1,8 +1,12 @@
 .singin{
-    width: 30vw;
+    width: 395px;
     display: flex;
     flex-direction:column;
     &.title{
         margin: 15px 0px;
     }
+}
+.buttonContainer{
+    display:flex;
+    justify-content: space-between;
 }
