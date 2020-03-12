@@ -1,7 +1,8 @@
 import React,{Component} from 'react';
 import './singIn.style.scss';
 import FormInput from '../formInput/FormInput';
-import Button from '../Button/Button';
+import Buttons from '../Button/Button';
+import {signInWithGoogle } from '../fireBase/FireBase';
 class Singin extends Component{
     constructor(){
         super();
@@ -30,8 +31,11 @@ class Singin extends Component{
    
                     <FormInput type="password" name='password' handelChange={this.onchange}  value={this.state.password} label='Password' required/>
     
-                    <Button type="submit"> SIGNIN</Button>
+                    <Buttons type="submit"> SIGN IN</Buttons>
+                    <Buttons onClick={signInWithGoogle}> SIGN IN WITH GOOGLE</Buttons>
+
                 </form>
+                
             </div>
 
         )
