@@ -2,7 +2,7 @@ import React,{Component} from 'react';
 import './singIn.style.scss';
 import FormInput from '../formInput/FormInput';
 import Buttons from '../Button/Button';
-import {signInWithGoogle } from '../fireBase/FireBase';
+import {signInWithGoogle, auth } from '../fireBase/FireBase';
 class Singin extends Component{
     constructor(){
         super();
@@ -12,9 +12,18 @@ class Singin extends Component{
         };
         
     }
-    handleSubmit=(e)=>{
+    handleSubmit=async e=>{
         e.preventDefault();
-        this.setState({email:'',password:''})
+        const {email,password}=this.state;
+        try{
+        await auth.signInWithEmailAndPassword(email,password);
+        
+
+        this.setState({email:'',password:''});
+    }
+    catch(error){
+        console.error(error);
+    }
     }
     onchange=e=>{
 

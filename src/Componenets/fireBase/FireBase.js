@@ -14,7 +14,7 @@ const config={
       
 
 };
-export const createUserProfile=async(userAuth)=>{
+export const createUserProfile=async(userAuth,otherdata)=>{
         if (!userAuth) return;
         const userRef=firestore.doc(`user/${userAuth.uid}`);
         const snapShot=await userRef.get();
@@ -27,7 +27,8 @@ export const createUserProfile=async(userAuth)=>{
                                 displayName,
                                 email,
                                 phoneNumber,
-                                createDate
+                                createDate,
+                                otherdata
                                 
                         });
 
