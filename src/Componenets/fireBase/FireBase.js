@@ -14,10 +14,37 @@ const config={
       
 
 };
+export const createUserProfile=async(userAuth)=>{
+        if (!userAuth) return;
+        const userRef=firestore.doc(`user/${userAuth.uid}`);
+        const snapShot=await userRef.get();
+        console.log(snapShot);
+        if (!snapShot.exists){
+                const {displayName,email,phoneNumber}=userAuth;
+                const createDate= new Date();
+                try{
+                        await userRef.set({
+                                displayName,
+                                email,
+                                phoneNumber,
+                                createDate
+                                
+                        });
+
+                }
+                catch(error){
+                        console.log("error creating User",error.message);
+                }
+
+        }
+        return userRef;
+
+};
 firebase.initializeApp(config);
 
 export const auth = firebase.auth();
 export const firestore = firebase.firestore();
+
 
 const provider = new firebase.auth.GoogleAuthProvider();
 provider.setCustomParameters({ prompt: 'select_account' });

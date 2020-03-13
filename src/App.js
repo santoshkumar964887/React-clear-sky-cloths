@@ -5,7 +5,7 @@ import HomePage from './Pages/MainHomePage';
 import ShopPage from './Componenets/ShopPage/shopPage';
 import Header from './Componenets/Header/header';
 import SinginSingup from './Pages/SingIn-SingUp/SingIn-SinUp';
-import {auth} from './Componenets/fireBase/FireBase';
+import {auth,createUserProfile} from './Componenets/fireBase/FireBase';
 
 class App extends React.Component {
   constructor(){
@@ -18,9 +18,24 @@ class App extends React.Component {
   unsubscribeFromAuth= null;
   
   componentDidMount(){
-    this.unsubscribeFromAuth=auth.onAuthStateChanged(usre=>{
-      this.setState({currentUser:usre})
-      console.log(usre);
+    this.unsubscribeFromAuth=auth.onAuthStateChanged(async usreAuth=>{
+      if(usreAuth){
+
+        const userRef=await createUserProfile(usreAuth);
+        userRef.onSnapshot(snap=>{
+          this.setState({
+            currentUser:{
+              id:snap.id,
+              ...snap.data()
+            }
+          },()=>{console.log(this.state);});
+        }
+
+          )
+      }
+      else{
+        this.setState({currentUser:usreAuth});
+      }
     })
   }
   componentWillUnmount(){
