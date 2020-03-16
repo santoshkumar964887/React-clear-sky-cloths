@@ -27,7 +27,7 @@ const Header=({currentUser,Hidden})=>(
         <CartIcon/>
     </div>
     {
-    Hidden? " ":<CardDropDown/>
+    Hidden?<CardDropDown/>:" "
     }
     
 </div>    

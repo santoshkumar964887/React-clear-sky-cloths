@@ -1,7 +1,7 @@
 import React from 'react';
 import './button.style.scss';
-const Buttons=({children,IsGoogleSignIn, ...otherPorps})=>(
-    <button className={`${IsGoogleSignIn?"GoogleSignIn":''} button`} {...otherPorps}>
+const Buttons=({children,IsGoogleSignIn, Inverted, ...otherPorps})=>(
+    <button className={`${Inverted ?"Inverted":''} button`} {...otherPorps}>
     {children}
     </button>
 );
