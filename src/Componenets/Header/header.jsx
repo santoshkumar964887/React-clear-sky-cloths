@@ -4,6 +4,8 @@ import {Link} from 'react-router-dom';
 import{ReactComponent as Logo} from '../Asset/crownLogo.svg';
 import {auth} from '../fireBase/FireBase';
 import {connect} from 'react-redux';
+import CartIcon from '../CartIcon/cartIcon';
+import CardDropDown from '../CardDropDown/cardDropDown';
 const Header=({currentUser})=>(
 <div className="header">
     <Link className='linkLogo' to='/'> 
@@ -22,7 +24,9 @@ const Header=({currentUser})=>(
             :
             <Link className='option' to='/signin'>SIGN IN</Link>
         }
+        <CartIcon/>
     </div>
+    <CardDropDown/>
     
 </div>    
 
