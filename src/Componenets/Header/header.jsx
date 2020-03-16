@@ -6,7 +6,7 @@ import {auth} from '../fireBase/FireBase';
 import {connect} from 'react-redux';
 import CartIcon from '../CartIcon/cartIcon';
 import CardDropDown from '../CardDropDown/cardDropDown';
-const Header=({currentUser})=>(
+const Header=({currentUser,Hidden})=>(
 <div className="header">
     <Link className='linkLogo' to='/'> 
     <Logo className='logo' />
@@ -26,13 +26,17 @@ const Header=({currentUser})=>(
         }
         <CartIcon/>
     </div>
-    <CardDropDown/>
+    {
+    Hidden? " ":<CardDropDown/>
+    }
     
 </div>    
 
 );
 
-const mapStateToProps=(state)=>({
-    currentUser: state.user.currentUser
+const mapStateToProps=({user:{currentUser},cart:{Hidden}})=>({
+    currentUser,
+    Hidden
+
 })
 export default connect(mapStateToProps) (Header);
