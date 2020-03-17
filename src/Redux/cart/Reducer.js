@@ -9,11 +9,16 @@ const CartReducer=(state=INITIAL_STATE,action)=>{
             return{
                 ...state,
                 Hidden:!state.Hidden
-            }
+            };
         case 'cartItem':
             return{
                 cartItem: addItemtoCart(state.cartItem,action.payload)
-            }
+            };
+        case 'clearItem':
+            return{
+                state,
+                cartItem: state.cartItem.filter(cartItem=>cartItem.id!==action.payload.id)
+            };
         default:
             return state;
 
