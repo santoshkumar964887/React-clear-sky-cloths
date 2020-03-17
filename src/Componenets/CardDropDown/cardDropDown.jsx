@@ -3,9 +3,10 @@ import Buttons from '../Button/Button';
 import {connect} from 'react-redux';
 import {withRouter} from 'react-router-dom';
 import './cardDropDown.style.scss';
+import {CartAction} from '../../Redux/cart/Action';
 import{selectCartItems} from '../../Redux/cart/cart.selector';
 import CartItem from '../CartItem/cartItem';
-const CardDropDown=({cartItem, history})=>(
+const CardDropDown=({cartItem, history,dispatch})=>(
     <div className="cardDropDown">
         <div className="items">
             {  cartItem.length?(
@@ -16,7 +17,11 @@ const CardDropDown=({cartItem, history})=>(
             </div>)
             }
             </div>
-        <Buttons onClick={()=> history.push('/checkout')} >GO TO CHECKOUT</Buttons>
+        <Buttons onClick={()=>{
+            
+            history.push('/checkout');
+            dispatch(CartAction());
+        }} >GO TO CHECKOUT</Buttons>
     </div>
 
 
