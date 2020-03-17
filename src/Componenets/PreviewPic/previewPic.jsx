@@ -4,7 +4,7 @@ import {connect} from 'react-redux';
 import{addCartItem} from '../../Redux/cart/Action';
 import './PreviewPic.style.scss';
 const PreviewPic=({items,addCartItem})=>{
- const{id,name,price,imageUrl}=items;
+ const{name,price,imageUrl}=items;
     return(
     <div className="previewpic">
         <div className='image'
