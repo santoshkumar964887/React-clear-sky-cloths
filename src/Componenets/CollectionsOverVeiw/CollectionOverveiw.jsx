@@ -3,7 +3,7 @@ import './CollectionOverVeiw.scss';
 import {connect} from 'react-redux';
 import {createStructuredSelector} from 'reselect';
 import Preview from '../PreviewCollection/Preview';
-import {SelectCollections} from '../../Redux/shop/ShopSelector';
+import {SelectCollectionsPreview} from '../../Redux/shop/ShopSelector';
 const CollectionOverVeiw=({collections})=>(
     <div className="CollectionOverVeiw">{
           collections.map(collections=>(
@@ -18,7 +18,7 @@ const CollectionOverVeiw=({collections})=>(
 );
 const mapStateToProps=createStructuredSelector(
     {
-      collections : SelectCollections 
+      collections : SelectCollectionsPreview
     }
 );
 export default connect(mapStateToProps)(CollectionOverVeiw);
