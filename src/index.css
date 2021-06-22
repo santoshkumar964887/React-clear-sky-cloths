@@ -1,13 +1,13 @@
 body {
   margin: 0;
-  font-family: "Playfair Display", serif, -apple-system, BlinkMacSystemFont,
+  font-family: "Indie Flower", cursive, -apple-system, BlinkMacSystemFont,
     "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
     "Droid Sans", "Helvetica Neue", sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: "Indie Flower";
+  -moz-osx-font-smoothing: "Indie Flower";
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+  font-family: "Indie Flower", cursive, source-code-pro, Menlo, Monaco, Consolas,
+    "Courier New", monospace;
 }
