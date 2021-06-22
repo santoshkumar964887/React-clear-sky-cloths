@@ -1,10 +1,13 @@
 import React from "react";
-import Dectory from "../../components/Directory";
+
+import Directory from "../../components/Directory";
+
 import "./style.scss";
 
 const HomePage = () => (
   <div className="homepage">
-    <Dectory />
+    <Directory />
   </div>
 );
+
 export default HomePage;
