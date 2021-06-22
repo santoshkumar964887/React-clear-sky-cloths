@@ -1,6 +1,6 @@
 import React from "react";
-import Dectory from "../Componenets/Directory/Dectory";
-import "./MainHomePage.Style.scss";
+import Dectory from "../../components/Directory";
+import "./style.scss";
 
 const HomePage = () => (
   <div className="homepage">
