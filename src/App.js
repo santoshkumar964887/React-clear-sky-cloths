@@ -5,6 +5,7 @@ import ShopPage from "./page/Shop";
 import Header from "./components/Header";
 import SignInAndSignUpPage from "./page/SignInSignUp";
 import "./App.css";
+import { connect } from "react-redux";
 import { auth, createUserProfileDocument } from "./firebase/firebase.utils";
 
 class App extends React.Component {
@@ -30,8 +31,6 @@ class App extends React.Component {
               ...snapShot.data(),
             },
           });
-
-          console.log(this.state);
         });
       }
 
