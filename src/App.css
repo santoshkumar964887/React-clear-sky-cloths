@@ -1,6 +1,5 @@
 body {
-  font-family: "Indie Flower", cursive, source-code-pro, Menlo, Monaco, Consolas,
-    "Courier New", monospace;
+  font-family: "Barlow", sans-serif !important;
   padding: 20px 60px;
 }
 a {
